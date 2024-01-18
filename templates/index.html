@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blutzucker Umrechner</title>
+	<link rel="icon" type="image/x-icon" href="/icons8-diabetes-16.png">
+</head>
+<body>
+    <h1>Blutzucker Umrechner</h1>
+    <form method="post" action="/">
+        <label for="input_value">Wert:</label>
+        <input type="text" name="input_value" pattern="\d+(\,\d{1,2})?" title="Bitte geben Sie eine Zahl ein (optional mit zwei Dezimalstellen, z.B., 5 oder 5,55)" required>
+        
+        <label for="conversion_type">Umrechnung:</label>
+        <select name="conversion_type" required>
+            <option value="mgdl_to_mmoll">mg/dL zu mmol/L</option>
+            <option value="mmoll_to_mgdl">mmol/L zu mg/dL</option>
+        </select>
+
+        <button type="submit">Umrechnen</button>
+    </form>
+    
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+
+    <h2>Blutzuckerreferenzwerte:</h2>
+    <ul>
+        <li>Fasten: Weniger als 100 mg/dL - 5,55 mmol/L</li>
+        <li>Preprandial (vor den Mahlzeiten): 70-130 mg/dL - 3,89-7,22 mmol/L</li>
+        <li>Postprandial (ein bis zwei Stunden nach dem Essen): Weniger als 180 mg/dL - 9,99 mmol/L</li>
+        <li>Schlafenszeit: 100-140 mg/dL - 5,55-7,77 mmol/L</li>
+    </ul>
+</body>
+</html>
