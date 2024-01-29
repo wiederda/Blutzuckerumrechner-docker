@@ -8,6 +8,8 @@ WORKDIR /app
 COPY app.py .
 COPY templates templates
 
+RUN chmod -R 777 /app
+
 # Installiere die erforderlichen Python-Pakete
 RUN pip install Flask gunicorn
 
