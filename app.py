@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-app1 = Flask(__name__)
+app = Flask(__name__)
 
 def mgdl_to_mmoll(mgdl_value):
     conversion_factor = 0.0555
@@ -12,7 +12,7 @@ def mmoll_to_mgdl(mmoll_value):
     mgdl_value = mmoll_value * conversion_factor
     return mgdl_value
 
-@app1.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     result = None
 
@@ -28,4 +28,4 @@ def index():
     return render_template('index.html', result=result)
 
 if __name__ == '__main__':
-    app1.run(debug=True, port=80)
+    app.run(debug=True, port=80)
