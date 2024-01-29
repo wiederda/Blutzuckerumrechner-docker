@@ -1,12 +1,12 @@
 # Verwende das offizielle Python-Image als Basis
-FROM python:3.8-slim
+FROM python:3.9-slim
 
 # Setze das Arbeitsverzeichnis im Container
 WORKDIR /app
 
 # Kopiere die Python-Skriptdateien in das Arbeitsverzeichnis
-#COPY app.py .
-#COPY templates templates
+COPY app.py .
+COPY templates templates
 
 # Installiere die erforderlichen Python-Pakete
 RUN pip install Flask gunicorn
