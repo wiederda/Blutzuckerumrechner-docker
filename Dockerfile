@@ -5,10 +5,8 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Kopiere die Python-Skriptdateien in das Arbeitsverzeichnis
-COPY app.py .
-COPY templates templates
-
-RUN chmod -R 777 /app
+#COPY app.py .
+#COPY templates templates
 
 # Installiere die erforderlichen Python-Pakete
 RUN pip install Flask gunicorn
